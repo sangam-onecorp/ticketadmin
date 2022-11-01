@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>signup here</h1>
+    <form action="/signup" method="POST">
+        {% csrf_token %}
+        {% if Error %}
+            <p>{{Error}}</p>
+        {% endif %}
+        <input required placeholder="Enter First Name" name="fName" type="text">
+        <input required placeholder="Enter Last Name" name="lName" type="text">
+        <input required placeholder="Enter Password" name="pass" type="password">
+        <input required placeholder="ReEnter Password" name="pass2" type="password">
+        <input required placeholder="Enter Phone No." name="phone" type="phone">
+        <input required placeholder="Enter Email" name="email" type="email">
+        <input required placeholder="Enter Location" name="location" type="text">
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>
